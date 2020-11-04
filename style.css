@@ -1,0 +1,273 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Spartan', sans-serif;
+}
+body{
+    height:100vh;
+    width: 100vw;
+    background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, right bottom;
+    
+}
+  
+
+.main-container{
+    width:80%;
+    height: 100vh;
+    margin: auto;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "heading rating"
+    "card card"
+    "footer footer";
+   
+}
+
+#main-heading{
+    color: hsl(300, 43%, 22%);
+    font-size: 4rem;
+    font-weight: bold;
+    
+}
+#main-heading-subtext{
+    margin-top: 1rem;
+    font-size: 20px;
+    color: hsl(0, 0%, 45%);
+}
+
+/*GRID ROW 1*/
+.row-1-column-1{
+    grid-area: heading;
+    margin-top: 6rem;
+    
+}
+
+.row-1-column-2{
+    grid-area: rating;
+    margin-top: 6rem;
+    display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
+
+/*RATING BOXES*/
+.rating{
+    background: hsl(300, 24%, 96%);
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    display:flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    flex-flow: row wrap;
+    width: 75%;
+}
+
+.rating:nth-child(3){
+    margin-right: 0rem;
+}
+.rating:nth-child(2){
+    margin-right: 4rem;
+}
+
+.rating:nth-child(1){
+    margin-right: 8rem;
+}
+
+.rating-stars{
+    display:flex;
+    justify-content: space-between;
+}
+
+.rating-stars svg{
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+}
+
+
+.rating-text{
+    margin-left: 3rem;
+    color: hsl(300, 43%, 22%);
+    font-weight: bold;
+}
+
+
+/*GRID ROW 2*/
+
+.row-2{
+    grid-area: card;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 1rem;
+    margin-left: auto;
+    
+}
+
+
+
+/*STYLING CARD*/
+.card{
+    display:flex;
+    flex-direction: column;
+    background-color:hsl(300, 43%, 22%);
+    padding: 2rem;
+    border-radius: 10px;
+    flex-basis: 25rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-height: 18rem;
+   
+    
+
+
+}
+.card:nth-child(1){
+    margin-top: 0rem;
+    
+}
+
+.card:nth-child(2){
+    margin-top: 2rem;
+    margin-left: 4rem;
+}
+.card:nth-child(3){
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+
+/*STYLING CARD PICTURE*/
+.card-image-left{
+    width: 15%;
+    height: auto;
+    border-radius: 60px;
+
+}
+
+/*ROW FOR THE HEADINGS INSIDE THE CARD*/
+.card-heading-row{
+    margin-left: 1rem;
+}
+.card-heading{
+    color:hsl(300, 24%, 96%);
+    display:flex;
+    flex-direction: row;
+}
+.card-sub-heading{
+    color:hsl(333, 80%, 67%);
+    }
+
+/*STYLING CARD BODY*/
+.card-body{
+    
+    margin-top: 2rem;
+    color:hsl(300, 24%, 96%);
+    font-size: 15px;
+    line-height: 1.6;
+    
+    
+}
+
+
+
+/*FOOTER*/
+footer{
+    grid-area: footer;
+    bottom:0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}
+
+
+/*RESPONSIVE DESIGN*/
+@media only screen and (max-width: 1080px){
+
+    body{
+        background-image: url(/images/bg-pattern-top-mobile.svg), url(/images/bg-pattern-bottom-mobile.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: top center, bottom;
+    }
+    .main-container{
+        
+        height: 100vh;
+        margin: auto;
+        display:grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "heading"
+        "rating"
+        "card"
+        "footer";
+       
+    }
+
+    .rating{
+    
+        padding: 1.5rem;
+        display:flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .rating:nth-child(3){
+        margin: 1rem auto auto auto;
+    }
+    .rating:nth-child(2){
+        margin: 1rem auto auto auto;
+    }
+    
+    .rating:nth-child(1){
+        margin: 1rem auto auto auto;
+    }
+
+
+    .row-2{
+        grid-area: card;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+        margin-top: 1rem;
+        
+        
+        
+    }
+    
+  
+    .card:nth-child(1){
+        margin-top: 1rem;
+    }
+    
+    .card:nth-child(2){
+        margin-top: 1rem;
+        margin-left: 0rem;
+    }
+    .card:nth-child(3){
+        margin-top: 1rem;
+        margin-left: 0rem;
+    }
+    
+
+
+}
+
+
+
